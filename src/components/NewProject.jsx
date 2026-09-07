@@ -32,10 +32,12 @@ export default function NewProject({ onAddProject }) {
 
   return (
     <>
-      <Modal ref={modalRef} buttonCaption="Close">
-        <h2>Invalid Input</h2>
-        <p>Oops... look like you forgot to enter a value.</p>
-        <p>
+      <Modal ref={modalRef} buttonCaption="Okay">
+        <h2 className="text-xl font-bold text-stone-700 my-4">Invalid Input</h2>
+        <p className="text-stone-600 mb-4">
+          Oops... look like you forgot to enter a value.
+        </p>
+        <p className="text-stone-600 mb-4">
           Please make sure you providea a valid value for every input field.
         </p>
       </Modal>
