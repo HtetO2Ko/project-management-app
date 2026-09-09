@@ -1,7 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import Modal from "./Modal.jsx";
+import { ProjectContext } from "../store/project-context.jsx";
 
-export default function NewTask({ onAdd }) {
+export default function NewTask() {
+  const { onAddTask } = useContext(ProjectContext);
   const modalRef = useRef();
   const [enteredTask, setEnteredTask] = useState("");
 
@@ -14,7 +16,7 @@ export default function NewTask({ onAdd }) {
       modalRef.current.open();
       return;
     }
-    onAdd(enteredTask);
+    onAddTask(enteredTask);
     setEnteredTask("");
   }
 
